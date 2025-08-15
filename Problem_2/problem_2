@@ -1,0 +1,20 @@
+function fiboEvenSum(n) {
+  let fibNumber = [1,2];
+  
+  for(let i=2; i<n; i++) {
+    fibNumber.push(fibNumber[i-1] + fibNumber[i-2]);
+  }
+  
+  let sum = 0;
+  for(let i=0; i<fibNumber.length; i++) {
+    if(fibNumber[i] % 2 === 0) {
+      if(fibNumber[i] <= n) {
+        sum += fibNumber[i]
+      }
+    }
+  }
+  console.log(sum)
+  return sum;
+}
+
+fiboEvenSum(4000000)
